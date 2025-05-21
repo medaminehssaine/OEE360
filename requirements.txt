@@ -1,8 +1,9 @@
-# requirements.txt
-simpy
-numpy
-pandas
-matplotlib
-seaborn
-scikit-learn
+simpy>=4.0.1
+numpy>=1.26.0
+pandas>=2.1.0
+matplotlib>=3.8.0
+streamlit>=1.29.0
+scikit-learn>=1.3.2
+plotly
+tensorflow
 statsmodels
