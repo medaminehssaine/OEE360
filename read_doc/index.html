@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Project Documentation</title>
+    <title>TS_OEE360 Documentation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
         <!-- Sidebar Navigation -->
         <div class="rtd-sidebar">
             <div class="rtd-sidebar-logo">
-                <h1>My Project</h1>
+                <h1>TS_OEE360</h1>
                 <p class="rtd-version">v1.0.0</p>
             </div>
             <div class="rtd-search">
@@ -28,12 +28,24 @@
                     <li class="rtd-toc-item">
                         <a href="#usage">Usage</a>
                         <ul>
-                            <li><a href="#basic-usage">Basic Usage</a></li>
-                            <li><a href="#advanced-usage">Advanced Usage</a></li>
+                            <li><a href="#running-simulation">Running Simulation</a></li>
+                            <li><a href="#visualization">Visualization</a></li>
+                            <li><a href="#forecasting">Forecasting</a></li>
                         </ul>
                     </li>
                     <li class="rtd-toc-item">
+                        <a href="#project-structure">Project Structure</a>
+                    </li>
+                    <li class="rtd-toc-item">
                         <a href="#api-reference">API Reference</a>
+                        <ul>
+                            <li><a href="#simulator">Simulator</a></li>
+                            <li><a href="#generator">Generator</a></li>
+                            <li><a href="#utils">Utils</a></li>
+                        </ul>
+                    </li>
+                    <li class="rtd-toc-item">
+                        <a href="#dashboard">Dashboard</a>
                     </li>
                 </ul>
             </nav>
@@ -45,80 +57,89 @@
                 <div class="rtd-page-header">
                     <h1 id="introduction">Introduction</h1>
                 </div>
-                
-                <p>Welcome to the documentation for My Project. This project aims to provide a simple and efficient solution for...</p>
-                
-                <h2 id="installation">Installation</h2>
-                <p>You can install My Project using pip:</p>
-                
-                <div class="rtd-code-block">
-                    <pre><code>pip install myproject</code></pre>
-                </div>
-                
-                <h2 id="usage">Usage</h2>
-                <p>Here's how to use My Project in your application:</p>
-                
-                <h3 id="basic-usage">Basic Usage</h3>
-                <p>Import the module and create an instance:</p>
-                
-                <div class="rtd-code-block">
-                    <pre><code>import myproject
 
-# Create an instance
-client = myproject.Client()
+                <p><strong>TS_OEE360</strong> is a Python-based industrial simulation project that models Overall Equipment Effectiveness (OEE) using a discrete-event simulation framework with <code>SimPy</code>. It outputs synthetic time series data that can later be used for forecasting.</p>
 
-# Execute a command
-result = client.execute()</code></pre>
-                </div>
-                
-                <h3 id="advanced-usage">Advanced Usage</h3>
-                <p>For more advanced use cases, you can configure the client with specific options:</p>
-                
-                <div class="rtd-code-block">
-                    <pre><code>client = myproject.Client(
-    timeout=30,
-    retry_count=3,
-    debug=True
-)</code></pre>
-                </div>
-                
-                <h2 id="api-reference">API Reference</h2>
-                <p>Detailed API documentation:</p>
-                
                 <div class="rtd-admonition rtd-note">
-                    <p class="rtd-admonition-title">Note</p>
-                    <p>This API is still in beta and may change in future versions.</p>
+                    <p class="rtd-admonition-title">What is OEE?</p>
+                    <p>Overall Equipment Effectiveness (OEE) is a standard metric used in manufacturing to measure productivity. It combines three components: Availability, Performance, and Quality.</p>
                 </div>
-                
-                <h3>Client</h3>
-                <p>The main interface for interacting with My Project.</p>
-                
-                <div class="rtd-method">
-                    <h4>Client(timeout=10, retry_count=1, debug=False)</h4>
-                    <p>Creates a new client instance.</p>
-                    <ul class="rtd-params">
-                        <li><strong>timeout</strong> (int): Connection timeout in seconds</li>
-                        <li><strong>retry_count</strong> (int): Number of retry attempts</li>
-                        <li><strong>debug</strong> (bool): Enable debug logging</li>
-                    </ul>
+
+                <h2 id="installation">Installation</h2>
+                <p>You can install the required dependencies using pip:</p>
+                <div class="rtd-code-block">
+                    <pre><code>pip install -r requirements.txt</code></pre>
                 </div>
-                
-                <div class="rtd-method">
-                    <h4>execute(command, **kwargs)</h4>
-                    <p>Executes the specified command.</p>
-                    <ul class="rtd-params">
-                        <li><strong>command</strong> (str): Command to execute</li>
-                        <li><strong>kwargs</strong>: Additional command parameters</li>
-                    </ul>
-                    <p><strong>Returns:</strong> CommandResult object</p>
+
+                <p>Alternatively, use the provided batch file:</p>
+                <div class="rtd-code-block">
+                    <pre><code>run_me.bat</code></pre>
                 </div>
-                
-                <footer class="rtd-footer">
-                    <p>My Project Documentation</p>
-                    <p>Built with HTML and CSS only</p>
-                </footer>
-            </div>
-        </div>
-    </div>
+
+                <h2 id="usage">Usage</h2>
+                <p>TS_OEE360 provides a comprehensive framework for simulating and analyzing OEE data.</p>
+
+                <h3 id="running-simulation">Running Simulation</h3>
+                <p>To run the simulation and generate OEE data:</p>
+                <div class="rtd-code-block">
+                    <pre><code>python scripts/run_simulation.py</code></pre>
+                </div>
+
+                <p>This will generate a dataset in <code>data/ultra_complex_OEE.csv</code> containing time series data of OEE metrics.</p>
+
+                <h3 id="visualization">Visualization</h3>
+                <p>To visualize the OEE components:</p>
+                <div class="rtd-code-block">
+                    <pre><code>from ts_oee360.utils import *
+df = load_simulation_data()
+plot_oee_components(df)</code></pre>
+                </div>
+
+                <h3 id="forecasting">Forecasting</h3>
+                <p>The generated data can be used for time series forecasting:</p>
+                <div class="rtd-code-block">
+                    <pre><code># Example of using the data for ARIMA forecasting
+import pandas as pd
+from statsmodels.tsa.arima.model import ARIMA
+
+df = pd.read_csv('data/ultra_complex_OEE.csv', index_col='timestamp', parse_dates=True)
+model = ARIMA(df['OEE'], order=(5,1,0))
+model_fit = model.fit()
+forecast = model_fit.forecast(steps=24)  # 24-hour forecast</code></pre>
+                </div>
+
+                <h2 id="project-structure">Project Structure</h2>
+                <p>The project is organized as follows:</p>
+                <div class="rtd-code-block">
+                    <pre><code>ts_oee360/         # Main module
+  ├── simulator.py     # SimPy classes (Machine, Supplier, PowerGrid)
+  ├── generator.py     # Simulation runner
+  └── utils.py         # Plotting & helpers
+scripts/
+  └── run_simulation.py
+notebooks/
+  └── exploration.ipynb
+data/
+  └── ultra_complex_OEE.csv  # Generated simulation data</code></pre>
+                </div>
+
+                <h2 id="api-reference">API Reference</h2>
+                <p>Detailed API documentation for the main components:</p>
+
+                <h3 id="simulator">Simulator</h3>
+                <p>Contains the SimPy simulation classes for modeling industrial equipment.</p>
+
+                <h3 id="generator">Generator</h3>
+                <p>Includes the main simulation loop, data generation, and CSV writing functions.</p>
+
+                <h3 id="utils">Utils</h3>
+                <p>Provides helper functions for data loading, cleaning, and visualization.</p>
+
+                <h2 id="dashboard">Dashboard</h2>
+                <p>A visualization dashboard is available using libraries like Plotly or Dash for real-time OEE monitoring and insights.</p>
+
+            </div> <!-- end of .rtd-content-inner -->
+        </div> <!-- end of .rtd-content -->
+    </div> <!-- end of .rtd-wrapper -->
 </body>
 </html>
