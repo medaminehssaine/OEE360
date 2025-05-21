@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="rtd-wrapper">
+        <!-- Sidebar Navigation -->
+        <div class="rtd-sidebar">
+            <div class="rtd-sidebar-logo">
+                <h1>My Project</h1>
+                <p class="rtd-version">v1.0.0</p>
+            </div>
+            <div class="rtd-search">
+                <input type="text" placeholder="Search docs...">
+            </div>
+            <nav class="rtd-nav">
+                <ul>
+                    <li class="rtd-toc-item rtd-toc-item-active">
+                        <a href="#introduction">Introduction</a>
+                    </li>
+                    <li class="rtd-toc-item">
+                        <a href="#installation">Installation</a>
+                    </li>
+                    <li class="rtd-toc-item">
+                        <a href="#usage">Usage</a>
+                        <ul>
+                            <li><a href="#basic-usage">Basic Usage</a></li>
+                            <li><a href="#advanced-usage">Advanced Usage</a></li>
+                        </ul>
+                    </li>
+                    <li class="rtd-toc-item">
+                        <a href="#api-reference">API Reference</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="rtd-content">
+            <div class="rtd-content-inner">
+                <div class="rtd-page-header">
+                    <h1 id="introduction">Introduction</h1>
+                </div>
+                
+                <p>Welcome to the documentation for My Project. This project aims to provide a simple and efficient solution for...</p>
+                
+                <h2 id="installation">Installation</h2>
+                <p>You can install My Project using pip:</p>
+                
+                <div class="rtd-code-block">
+                    <pre><code>pip install myproject</code></pre>
+                </div>
+                
+                <h2 id="usage">Usage</h2>
+                <p>Here's how to use My Project in your application:</p>
+                
+                <h3 id="basic-usage">Basic Usage</h3>
+                <p>Import the module and create an instance:</p>
+                
+                <div class="rtd-code-block">
+                    <pre><code>import myproject
+
+# Create an instance
+client = myproject.Client()
+
+# Execute a command
+result = client.execute()</code></pre>
+                </div>
+                
+                <h3 id="advanced-usage">Advanced Usage</h3>
+                <p>For more advanced use cases, you can configure the client with specific options:</p>
+                
+                <div class="rtd-code-block">
+                    <pre><code>client = myproject.Client(
+    timeout=30,
+    retry_count=3,
+    debug=True
+)</code></pre>
+                </div>
+                
+                <h2 id="api-reference">API Reference</h2>
+                <p>Detailed API documentation:</p>
+                
+                <div class="rtd-admonition rtd-note">
+                    <p class="rtd-admonition-title">Note</p>
+                    <p>This API is still in beta and may change in future versions.</p>
+                </div>
+                
+                <h3>Client</h3>
+                <p>The main interface for interacting with My Project.</p>
+                
+                <div class="rtd-method">
+                    <h4>Client(timeout=10, retry_count=1, debug=False)</h4>
+                    <p>Creates a new client instance.</p>
+                    <ul class="rtd-params">
+                        <li><strong>timeout</strong> (int): Connection timeout in seconds</li>
+                        <li><strong>retry_count</strong> (int): Number of retry attempts</li>
+                        <li><strong>debug</strong> (bool): Enable debug logging</li>
+                    </ul>
+                </div>
+                
+                <div class="rtd-method">
+                    <h4>execute(command, **kwargs)</h4>
+                    <p>Executes the specified command.</p>
+                    <ul class="rtd-params">
+                        <li><strong>command</strong> (str): Command to execute</li>
+                        <li><strong>kwargs</strong>: Additional command parameters</li>
+                    </ul>
+                    <p><strong>Returns:</strong> CommandResult object</p>
+                </div>
+                
+                <footer class="rtd-footer">
+                    <p>My Project Documentation</p>
+                    <p>Built with HTML and CSS only</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
