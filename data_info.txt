@@ -1,0 +1,84 @@
+Creating stable dataset: Stable, well-maintained equipment with minimal failures
+  - Generated 8760 records with 65 anomaly events
+  - Average OEE: 0.542
+  - OEE Range: 0.000 - 0.980
+
+Creating aging dataset: Aging equipment with declining performance over time
+  - Generated 8760 records with 68 anomaly events
+  - Average OEE: 0.536
+  - OEE Range: 0.000 - 0.980
+
+Creating seasonal dataset: Strong seasonal patterns affecting performance
+  - Generated 8760 records with 68 anomaly events
+  - Average OEE: 0.537
+  - OEE Range: 0.000 - 0.980
+
+Creating high_variability dataset: High variability in all parameters
+  - Generated 8760 records with 67 anomaly events
+  - Average OEE: 0.532
+  - OEE Range: 0.000 - 0.965
+
+Creating normal dataset: Baseline normal operations
+  - Generated 8760 records with 63 anomaly events
+  - Average OEE: 0.540
+  - OEE Range: 0.000 - 0.980
+
+Dataset Summary:
+==================================================
+STABLE Dataset:
+  Records: 8760
+  Date Range: 2023-01-01 00:00:00 to 2023-12-31 23:00:00
+  Average OEE: 0.542 ± 0.139
+  Availability: 0.990
+  Performance: 0.652
+  Quality: 0.827
+  Anomaly Events: 65
+
+AGING Dataset:
+  Records: 8760
+  Date Range: 2023-01-01 00:00:00 to 2023-12-31 23:00:00
+  Average OEE: 0.536 ± 0.134
+  Availability: 0.989
+  Performance: 0.646
+  Quality: 0.824
+  Anomaly Events: 68
+
+SEASONAL Dataset:
+  Records: 8760
+  Date Range: 2023-01-01 00:00:00 to 2023-12-31 23:00:00
+  Average OEE: 0.537 ± 0.137
+  Availability: 0.988
+  Performance: 0.647
+  Quality: 0.824
+  Anomaly Events: 68
+
+HIGH_VARIABILITY Dataset:
+  Records: 8760
+  Date Range: 2023-01-01 00:00:00 to 2023-12-31 23:00:00
+  Average OEE: 0.532 ± 0.135
+  Availability: 0.988
+  Performance: 0.643
+  Quality: 0.823
+  Anomaly Events: 67
+
+NORMAL Dataset:
+  Records: 8760
+  Date Range: 2023-01-01 00:00:00 to 2023-12-31 23:00:00
+  Average OEE: 0.540 ± 0.137
+  Availability: 0.991
+  Performance: 0.649
+  Quality: 0.826
+  Anomaly Events: 63
+
+Data generation complete! Files saved:
+  - oee_dataset_stable.csv
+  - oee_anomalies_stable.csv
+  - oee_dataset_aging.csv
+  - oee_anomalies_aging.csv
+  - oee_dataset_seasonal.csv
+  - oee_anomalies_seasonal.csv
+  - oee_dataset_high_variability.csv
+  - oee_anomalies_high_variability.csv
+  - oee_dataset_normal.csv
+  - oee_anomalies_normal.csv
+
