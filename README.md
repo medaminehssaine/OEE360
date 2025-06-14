@@ -1,5 +1,8 @@
 # OEE360 - Data Analytics Platform
 
+**Project by:** Adam El Madani & Mohammed Amine Hssaine  
+**Supervised by:** Tawfik Masrour
+
 OEE360 is a comprehensive data analytics platform that allows users to upload datasets, manage models, and perform various types of analysis. The application features both a modern web interface built with Next.js and a powerful Python Flask backend for data processing.
 
 ## Features

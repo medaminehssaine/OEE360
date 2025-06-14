@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OEE360 Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="rtd-wrapper">
+        <!-- Sidebar Navigation -->
+        <div class="rtd-sidebar">
+            <div class="rtd-sidebar-logo">
+                <h1>OEE360</h1>
+                <p class="rtd-version">v1.0.0</p>
+            </div>
+            
+            <div class="rtd-project-info">
+                <p><strong>Project by:</strong> Adam El Madani & Mohammed Amine Hssaine</p>
+                <p><strong>Supervised by:</strong> Tawfik Masrour</p>
+            </div>
+            
+            <div class="rtd-search">
+                <input type="text" placeholder="Search docs...">
+            </div>
+            <nav class="rtd-nav">
+                <ul>
+                    <li class="rtd-toc-item rtd-toc-item-active">
+                        <a href="#introduction">Introduction</a>
+                    </li>
+                    <li class="rtd-toc-item">
+                        <a href="#features">Features</a>
+                    </li>
+                    <li class="rtd-toc-item">
+                        <a href="#installation">Installation</a>
+                        <ul>
+                            <li><a href="#prerequisites">Prerequisites</a></li>
+                            <li><a href="#setup">Setup</a></li>
+                        </ul>
+                    </li>
+                    <li class="rtd-toc-item">
+                        <a href="#usage">Usage</a>
+                        <ul>
+                            <li><a href="#dataset-management">Dataset Management</a></li>
+                            <li><a href="#model-management">Model Management</a></li>
+                            <li><a href="#data-analysis">Data Analysis</a></li>
+                        </ul>
+                    </li>
+                    <li class="rtd-toc-item">
+                        <a href="#project-structure">Project Structure</a>
+                    </li>
+                    <li class="rtd-toc-item">
+                        <a href="#api-reference">API Reference</a>
+                        <ul>
+                            <li><a href="#dataset-api">Dataset API</a></li>
+                            <li><a href="#model-api">Model API</a></li>
+                            <li><a href="#analytics-api">Analytics API</a></li>
+                        </ul>
+                    </li>
+                    <li class="rtd-toc-item">
+                        <a href="#development">Development</a>
+                    </li>
+                    <li class="rtd-toc-item">
+                        <a href="#technology-stack">Technology Stack</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="rtd-content">
+            <div class="rtd-content-inner">
+                <div class="rtd-page-header">
+                    <h1 id="introduction">Introduction</h1>
+                </div>
+
+                <p><strong>OEE360</strong> is a comprehensive data analytics platform that allows users to upload datasets, manage models, and perform various types of analysis. The application features both a modern web interface built with Next.js and a powerful Python Flask backend for data processing.</p>
+
+                <div class="rtd-admonition rtd-note">
+                    <p class="rtd-admonition-title">What is OEE?</p>
+                    <p>Overall Equipment Effectiveness (OEE) is a standard metric used in manufacturing to measure productivity. It combines three components: Availability, Performance, and Quality to provide a comprehensive view of equipment efficiency.</p>
+                </div>
+
+                <h2 id="features">Features</h2>
+                
+                <div class="rtd-feature-grid">
+                    <div class="rtd-feature-box">
+                        <h3>Dataset Management</h3>
+                        <ul>
+                            <li>Upload CSV and JSON datasets</li>
+                            <li>Browse and manage your datasets</li>
+                            <li>Real-time dataset preview</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="rtd-feature-box">
+                        <h3>Model Management</h3>
+                        <ul>
+                            <li>Upload models (JSON, PKL, JOBLIB formats)</li>
+                            <li>Track model metadata and performance</li>
+                            <li>Use predefined models (SARIMA, LSTM, GRU)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="rtd-feature-box">
+                        <h3>Data Analysis</h3>
+                        <ul>
+                            <li>Analyze datasets using selected models</li>
+                            <li>Generate forecasts with configurable parameters</li>
+                            <li>Visualize analysis results</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="rtd-feature-box">
+                        <h3>Real-time Analytics</h3>
+                        <ul>
+                            <li>Toggle between static and live data analysis</li>
+                            <li>Adjust forecast horizon and lookback window</li>
+                            <li>Dynamic parameter configuration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 id="installation">Installation</h2>
+
+                <h3 id="prerequisites">Prerequisites</h3>
+                <p>Before installing OEE360, ensure you have the following prerequisites installed:</p>
+                <ul>
+                    <li>Node.js (v16 or higher)</li>
+                    <li>Python (v3.8 or higher)</li>
+                    <li>npm or yarn package manager</li>
+                </ul>
+
+                <h3 id="setup">Setup</h3>
+                <p>Follow these steps to set up the OEE360 platform:</p>
+
+                <p><strong>1. Clone the repository</strong></p>
+                <div class="rtd-code-block">
+                    <pre><code>git clone https://github.com/medaminehssaine/OEE360.git
+cd OEE360</code></pre>
+                </div>
+
+                <p><strong>2. Install frontend dependencies</strong></p>
+                <div class="rtd-code-block">
+                    <pre><code>npm install</code></pre>
+                </div>
+
+                <p><strong>3. Create Python virtual environment</strong></p>
+                <div class="rtd-code-block">
+                    <pre><code># Create virtual environment
+python -m venv env
+
+# Activate virtual environment (Windows)
+env\Scripts\activate.bat
+# OR for Mac/Linux:
+# source env/bin/activate</code></pre>
+                </div>
+
+                <p><strong>4. Install Python packages</strong></p>
+                <div class="rtd-code-block">
+                    <pre><code>pip install -r requirements.txt</code></pre>
+                </div>
+
+                <p><strong>5. Generate sample datasets and train models</strong></p>
+                <div class="rtd-code-block">
+                    <pre><code>python scripts/generate_datasets.py
+python scripts/train_models.py</code></pre>
+                </div>
+
+                <div class="rtd-admonition rtd-warning">
+                    <p class="rtd-admonition-title">Important</p>
+                    <p>Make sure your Python virtual environment is activated before installing packages and running scripts.</p>
+                </div>
+
+                <h2 id="usage">Usage</h2>
+                <p>OEE360 provides a comprehensive framework for data analytics and model management.</p>
+
+                <h3 id="dataset-management">Dataset Management</h3>
+                <p>To start working with datasets:</p>
+                <div class="rtd-code-block">
+                    <pre><code># Start the Flask backend
+python app.py
+
+# In a separate terminal, start the Next.js development server
+npm run dev</code></pre>
+                </div>
+
+                <p>Navigate to <code>http://localhost:3000</code> to access the web interface. You can then:</p>
+                <ul>
+                    <li>Upload new datasets through the web interface</li>
+                    <li>Browse existing datasets</li>
+                    <li>Preview dataset contents</li>
+                    <li>Delete datasets when no longer needed</li>
+                </ul>
+
+                <h3 id="model-management">Model Management</h3>
+                <p>The platform supports various model formats and provides built-in models:</p>
+                <div class="rtd-code-block">
+                    <pre><code># Available predefined models:
+- SARIMA (Seasonal AutoRegressive Integrated Moving Average)
+- LSTM (Long Short-Term Memory)
+- GRU (Gated Recurrent Unit)</code></pre>
+                </div>
+
+                <h3 id="data-analysis">Data Analysis</h3>
+                <p>To perform analysis on your datasets:</p>
+                <div class="rtd-code-block">
+                    <pre><code># Example API call for analysis
+POST /api/analytics
+{
+  "dataset_id": "your_dataset_id",
+  "model_id": "your_model_id",
+  "forecast_horizon": 24,
+  "lookback_window": 168
+}</code></pre>
+                </div>
+
+                <h2 id="project-structure">Project Structure</h2>
+                <p>The project is organized with a clear separation between frontend and backend components:</p>
+                <div class="rtd-code-block">
+                    <pre><code>OEE360/
+├── app/                      # Next.js application
+│   ├── analyze/              # Analysis page
+│   ├── api/                  # Next.js API routes
+│   │   ├── datasets/         # Dataset management API
+│   │   └── models/           # Model management API
+├── components/               # React components
+│   ├── ui/                   # UI components
+│   └── DataModelSelector.tsx # Dataset and model selection
+├── data/                     # Data storage
+│   ├── datasets/             # Stored datasets
+│   └── models/               # Stored models
+├── lib/                      # Helper functions
+├── scripts/                  # Python scripts
+│   ├── generate_datasets.py  # Generate sample datasets
+│   └── train_models.py       # Train sample models
+├── app.py                    # Flask backend
+├── requirements.txt          # Python dependencies
+└── package.json              # Node.js dependencies</code></pre>
+                </div>
+
+                <h2 id="api-reference">API Reference</h2>
+                <p>Detailed API documentation for the main components:</p>
+
+                <h3 id="dataset-api">Dataset API</h3>
+                <div class="rtd-method">
+                    <h4>GET /api/datasets</h4>
+                    <p>Retrieves a list of all available datasets.</p>
+                    <p><strong>Response:</strong> JSON array of dataset objects with metadata.</p>
+                </div>
+
+                <div class="rtd-method">
+                    <h4>POST /api/datasets</h4>
+                    <p>Uploads a new dataset to the platform.</p>
+                    <p><strong>Request:</strong> Multipart form data with dataset file.</p>
+                    <p><strong>Supported formats:</strong> CSV, JSON</p>
+                </div>
+
+                <div class="rtd-method">
+                    <h4>GET /api/datasets/:id</h4>
+                    <p>Retrieves a specific dataset by ID.</p>
+                    <p><strong>Parameters:</strong></p>
+                    <ul class="rtd-params">
+                        <li><code>id</code> - Dataset identifier</li>
+                    </ul>
+                </div>
+
+                <div class="rtd-method">
+                    <h4>DELETE /api/datasets/:id</h4>
+                    <p>Deletes a dataset from the platform.</p>
+                    <p><strong>Parameters:</strong></p>
+                    <ul class="rtd-params">
+                        <li><code>id</code> - Dataset identifier</li>
+                    </ul>
+                </div>
+
+                <h3 id="model-api">Model API</h3>
+                <div class="rtd-method">
+                    <h4>GET /api/models</h4>
+                    <p>Retrieves a list of all available models.</p>
+                    <p><strong>Response:</strong> JSON array of model objects with metadata.</p>
+                </div>
+
+                <div class="rtd-method">
+                    <h4>POST /api/models</h4>
+                    <p>Uploads a new model to the platform.</p>
+                    <p><strong>Supported formats:</strong> JSON, PKL, JOBLIB</p>
+                </div>
+
+                <div class="rtd-method">
+                    <h4>DELETE /api/models/:id</h4>
+                    <p>Deletes a model from the platform.</p>
+                    <p><strong>Parameters:</strong></p>
+                    <ul class="rtd-params">
+                        <li><code>id</code> - Model identifier</li>
+                    </ul>
+                </div>
+
+                <h3 id="analytics-api">Analytics API</h3>
+                <div class="rtd-method">
+                    <h4>POST /api/analytics</h4>
+                    <p>Runs analysis with selected dataset and model.</p>
+                    <p><strong>Request body:</strong></p>
+                    <ul class="rtd-params">
+                        <li><code>dataset_id</code> - ID of the dataset to analyze</li>
+                        <li><code>model_id</code> - ID of the model to use</li>
+                        <li><code>forecast_horizon</code> - Number of periods to forecast</li>
+                        <li><code>lookback_window</code> - Historical data window size</li>
+                    </ul>
+                </div>
+
+                <h2 id="development">Development</h2>
+                <p>Guidelines for extending and contributing to OEE360:</p>
+
+                <h3>Adding New Features</h3>
+                <p><strong>Backend Features:</strong></p>
+                <ul>
+                    <li>Add new routes to <code>app.py</code></li>
+                    <li>Create corresponding API endpoints in Next.js API routes</li>
+                    <li>Update data models and validation schemas</li>
+                </ul>
+
+                <p><strong>Frontend Features:</strong></p>
+                <ul>
+                    <li>Add new pages in the <code>app</code> directory</li>
+                    <li>Create reusable components in the <code>components</code> directory</li>
+                    <li>Update TypeScript interfaces and types</li>
+                </ul>
+
+                <h3>Running Tests</h3>
+                <div class="rtd-code-block">
+                    <pre><code># Run frontend tests
+npm test
+
+# Run backend tests
+python -m pytest</code></pre>
+                </div>
+
+                <h2 id="technology-stack">Technology Stack</h2>
+                
+                <h3>Frontend</h3>
+                <ul>
+                    <li><strong>Next.js</strong> - React framework for the web interface</li>
+                    <li><strong>TypeScript</strong> - Type-safe JavaScript development</li>
+                    <li><strong>Shadcn UI</strong> - Modern UI component library</li>
+                    <li><strong>Embla Carousel</strong> - Carousel component for data visualization</li>
+                </ul>
+
+                <h3>Backend</h3>
+                <ul>
+                    <li><strong>Flask</strong> - Python web framework</li>
+                    <li><strong>Pandas</strong> - Data manipulation and analysis</li>
+                    <li><strong>NumPy</strong> - Numerical computing</li>
+                    <li><strong>Scikit-learn</strong> - Machine learning library</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
